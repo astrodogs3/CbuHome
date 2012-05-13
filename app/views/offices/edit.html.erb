@@ -1,0 +1,36 @@
+<h1>Editing office</h1>
+
+<% form_for(@office) do |f| %>
+  <%= f.error_messages %>
+<p>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  
+  
+    <%= f.label :postoffice %>
+    <%= f.text_field :postoffice %>
+  
+  
+    <%= f.label :state %>
+    <%= f.text_field :state %>
+  
+  
+    <%= f.label :zip %>
+    <%= f.text_field :zip %>
+  </p>
+  <p>
+    <%= f.label :lat %>
+    <%= f.text_field :lat %>
+  </p>
+  <p>
+    <%= f.label :lng %>
+    <%= f.text_field :lng %>
+  </p>
+   
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @office %> |
+<%= link_to 'Back', offices_path %>

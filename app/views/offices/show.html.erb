@@ -1,0 +1,28 @@
+p>
+  <b>address:</b>
+  <%=h @office.address %>
+</p>
+<p>
+  <b>Post Office:</b>
+  <%=h @office.city %>
+</p>
+<p>
+  <b>State:</b>
+  <%=h @office.state %>
+</p>
+<p>
+  <b>zip:</b>
+  <%=h @office.zip %>
+</p>
+<p>
+  <b>lat:</b>
+  <%=h @office.lat %>
+</p>
+<p>
+  <b>lng:</b>
+  <%=h @office.lng %>
+</p>
+
+
+<%= link_to 'Edit', edit_office_path(@office) %> |
+<%= link_to 'Back', offices_path %>

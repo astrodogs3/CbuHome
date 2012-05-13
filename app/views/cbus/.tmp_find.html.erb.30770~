@@ -1,0 +1,20 @@
+<h1>Listing CBUs for <%=params[:search_string]%></hl>
+
+<table>
+	<tr>
+		<th>address</th>
+		<th>route number</th>
+		<th>lat</th>
+		<th>lng</th>
+	</tr>
+
+<% for cbu in @cbus %>
+
+	<tr>
+		<td><%=h cbu.address%></td>
+		<td><%=h cbu.route_number%></td>
+		<td><%=h cbu.lat%></td>
+		<td><%=h cbu.lng%></td>
+	</tr>
+	<%end%>
+</table>

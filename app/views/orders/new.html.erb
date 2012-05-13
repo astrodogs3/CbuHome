@@ -1,0 +1,27 @@
+<h1>New order</h1>
+
+<% form_for(@order) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :locker %><br />
+    <%= f.text_field :locker %>
+  </p>
+  <p>
+    <%= f.label :problem %><br />
+    <%= f.text_field :problem %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', orders_path %>

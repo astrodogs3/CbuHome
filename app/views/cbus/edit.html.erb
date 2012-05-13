@@ -1,0 +1,84 @@
+<style type="text/css">
+	p { margin: 0px}
+</style>
+
+<h1>Editing cbu</h1>
+
+<% form_for(@cbu) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :zip %>
+    <%= f.text_field :zip, :size =>5%>
+  </p>
+  <p>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </p>
+  <p>
+    <%= f.label :route_number %>
+    <%= f.text_field :route_number, :size =>4 %>
+  </p>
+  <p>
+    <%= f.label :info %>
+    <%= f.text_field :info, :size =>4 %>
+  </p>
+  <p>
+    <%= f.label :mode %>
+    <%= f.text_field :mode, :size =>4 %>
+  </p>
+  <p>
+    <%= f.label :cbu_type %>
+    <%= f.text_field :cbu_type, :size =>4 %>
+  </p>
+  <p>
+    <%= f.label :postal_purchase %>
+    <%= f.text_field :postal_purchase, :size =>2 %>
+  </p>  
+   <p>
+    <%= f.label :prvt_purchase %>
+    <%= f.text_field :prvt_purchase, :size =>2%>
+  </p>  
+  <p>
+    <%= f.label :nbu_type %>
+    <%= f.text_field :nbu_type, :size =>4 %>
+  </p>  
+  <p>
+    <%= f.label :nbu_number %>
+    <%= f.text_field :nbu_number, :size =>4 %>
+  </p> 
+   <p>
+     <%= f.label :parcel_locker %>
+     <%= f.text_field :parcel_locker, :size =>2 %>
+  </p>
+  <p>
+    <%= f.label :res_deliveries %>
+    <%= f.text_field :res_deliveries, :size =>3 %>
+  </p>
+  <p>
+    <%= f.label :bus_deliveries %>
+    <%= f.text_field :bus_deliveries, :size =>3 %>
+  </p> 
+   <p>
+    <%= f.label :mth_installed %>
+    <%= f.text_field :mth_installed, :size =>2%>
+  </p> 
+  <p>
+    <%= f.label :yr_installed %>
+    <%= f.text_field :yr_installed, :size =>4%>
+  </p>
+  <p>
+    <%= f.label :lat %>
+    <%= f.text_field :lat, :size =>12 %>
+  </p>
+  <p>
+    <%= f.label :lng %>
+    <%= f.text_field :lng, :size =>12%>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @cbu %> |
+<%= link_to 'Back', cbus_path %>

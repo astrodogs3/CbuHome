@@ -1,0 +1,31 @@
+
+<h1>Your CBU Address Catalog</h1>
+<p>The following is a list of your CBU address locations</p>
+
+<div class="entry">
+	<table>
+		<tr>
+			<th>Route</th>
+			<th>Address</th>
+			<th>NBU Number</th>
+			<th>NBU type</th>
+			<th>Parcel locker</th>
+			<th>Latitude</th>
+			<th>Longitude</th>
+		</tr>
+		<%for cbu in @cbus%>
+		<tr>
+			<td><%=h cbu.route_number%></td>
+			<td><%=h cbu.address%></td>
+			<td><%=h cbu.nbu_number%></td>
+			<td><%=h cbu.nbu_type%></td>
+			<td><%=h cbu.parcel_locker%></td>
+			<td><%=h cbu.lat%></td>
+			<td><%=h cbu.lng%></td>
+			<td><%= button_to 'Add to Request', :action => 'add_to_request', :id => cbu %></td>
+		</tr>
+	
+</div>
+<% end %>
+
+

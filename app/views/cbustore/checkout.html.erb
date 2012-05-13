@@ -1,0 +1,27 @@
+<div class="request-form">  
+  <%= error_messages_for 'order' %>  
+  <% form_for :order, :url => { :action => :save_order } do |form| %>
+	<fieldset>
+      <legend>Please Enter Your Details</legend>
+<div>
+<%= form.label :locker,"Locker:" %>
+<%= form.select :locker,Order::LOCKER_NUM,:prompt => "Select a locker number" %>
+</div><br/>
+<div>
+<%= form.label :problem, "Problem:" %>
+<%= form.select :problem,Order::PROBLEM_TYPES,:prompt => "Select a problem" %>
+</div><br/>    
+<div>
+<%= form.label :description, "Description:" %>
+<%= form.text_area :description, :rows => 5, :cols => 40 %>
+</div><br/>
+<div>
+<%= form.label :date, "Date:" %>
+<%= form.text_field :created_at, :size => 10 %>
+</div>
+
+<%= submit_tag "Place Order", :class => "submit" %>
+	</fieldset>
+	<%end%>
+</div>
+

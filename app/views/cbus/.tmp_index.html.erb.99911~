@@ -1,0 +1,59 @@
+
+<h1>Listing cbus</h1>
+<table>	
+  <tr>
+    <th>Zip</th>
+    <th>Address</th>
+    <th>route number</th>
+    <th>info</th>
+    <th>mode</th>
+    <th>cbu type</th>
+    <th>postal purchase</th>
+    <th>private purchase</th>	
+    <th>nbu type</th>
+    <th>nbu number</th>
+    <th>parcel locker</th>   
+    <th>res deliveries</th>
+    <th>bus deliveries</th>
+    <th>mth installed</th>
+    <th>yr installed</th>
+	<th>lat</th>
+	<th>lng</th>
+  </tr>
+
+
+
+
+<%@cbus.each_with_index do |cbu, index|%>
+
+<tr class="<%= index % 2 == 0 ? 'background0' : 'background1' %>">
+    <td style="width: 100px;"><%=h cbu.zip %></td>
+    <td style="width: 300px;"><%=h cbu.address %></td>
+    <td style="width: 100px;"><%=h cbu.route_number %></td>
+    <td><%=h cbu.info %></td>
+    <td><%=h cbu.mode %></td>
+    <td><%=h cbu.cbu_type %></td>
+    <td style="width: 100px;"><%=h cbu.postal_purchase %></td>
+	<td style="width: 100px;"><%=h cbu.prvt_purchase %></td>
+    <td><%=h cbu.nbu_type %></td>    
+    <td><%=h cbu.nbu_number %></td>    
+    <td><%=h cbu.parcel_locker %></td>
+    <td><%=h cbu.res_deliveries %></td>
+	<td><%=h cbu.bus_deliveries %></td>
+    <td><%=h cbu.mth_installed %></td>
+    <td><%=h cbu.yr_installed %></td>
+	<td><%=h cbu.lat %></td>
+	<td><%=h cbu.lng %></td>
+	
+    <td><%= link_to 'Show', cbu %></td>
+    <td><%= link_to 'Edit', edit_cbu_path(cbu) %></td>
+    <td><%= link_to 'Destroy', cbu, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
+<%= link_to 'New cbu', new_cbu_path %>
+

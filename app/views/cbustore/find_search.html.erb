@@ -1,0 +1,17 @@
+<h1>Listing Your CBU for Address - <%= params[:search_string]%></h1>
+
+<table>
+		<tr>
+			<th>Route Number</th>
+			<th>Address</th>
+		</tr>
+
+	<% for cbu in @cbus %>	
+		<tr>
+			<td><%=h cbu.route_number%></td>
+			<td><%=h cbu.address%></td>
+			<td><%= button_to 'Add to Request', :action => 'add_to_request', :id => cbu %></td>
+		</tr>
+	<% end %>
+</table>
+

@@ -1,0 +1,87 @@
+<h1>New cbu</h1>
+
+<% form_for(@cbu) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :zip %>
+    <%= f.text_field :zip %>
+  </p>   
+  <p>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </p>
+    <p>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </p>
+   <p>
+    <%= f.label :state %>
+    <%= f.text_field :state %>
+  </p>
+   <p>
+    <%= f.label :route_number %>
+    <%= f.text_field :route_number %>
+  </p>
+  <p>
+    <%= f.label :info %>
+    <%= f.text_field :info %>
+  </p>
+  <p>
+    <%= f.label :mode %>
+    <%= f.text_field :mode %>
+  </p>
+  <p>
+    <%= f.label :cbu_type %>
+    <%= f.text_field :cbu_type %>
+  </p>
+  <p>
+    <%= f.label :postal_purchase %>
+    <%= f.text_field :postal_purchase %>
+  </p>  
+  <p>
+    <%= f.label :prvt_purchase %>
+    <%= f.text_field :prvt_purchase %>
+  </p>  
+  <p>
+    <%= f.label :nbu_type %>
+    <%= f.text_field :nbu_type %>
+  </p>    
+  <p>
+    <%= f.label :nbu_number %>
+    <%= f.text_field :nbu_number %>
+  </p>
+   <p>
+     <%= f.label :parcel_locker %>
+     <%= f.text_field :parcel_locker %>
+  </p>
+  <p>
+    <%= f.label :res_deliveries %>
+    <%= f.text_field :res_deliveries %>
+  </p>
+  <p>
+    <%= f.label :bus_deliveries %>
+    <%= f.text_field :bus_deliveries %>
+  </p>
+  <p>
+    <%= f.label :mth_installed %>
+    <%= f.text_field :mth_installed %>
+  </p>
+  <p>
+    <%= f.label :yr_installed %>
+    <%= f.text_field :yr_installed %>
+  </p>
+  <p>
+    <%= f.label :lat %>
+    <%= f.text_field :lat %>
+  </p>
+  <p>
+    <%= f.label :lng %>
+    <%= f.text_field :lng %>
+  </p>
+
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', cbus_path %>

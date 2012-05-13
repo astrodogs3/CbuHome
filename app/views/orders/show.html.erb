@@ -1,0 +1,23 @@
+<p>
+  <b>Locker:</b>
+  <%=h @order.locker %>
+</p>
+
+<p>
+  <b>Problem:</b>
+  <%=h @order.problem %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @order.description %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%=h @order.date %>
+</p>
+
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

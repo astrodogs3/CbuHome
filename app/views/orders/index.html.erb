@@ -1,0 +1,23 @@
+<h1>CBU Repair Request Orders</h1>
+<table>
+  <tr>
+  	<th>Route</th>
+    <th>Address</th>
+    <th>Locker Number</th>
+    <th>Problem</th>
+    <th>Description</th>
+    <th>Date</th>
+  </tr>
+<% @orders.each do |order| %>
+  <tr>
+    <td><%=h order.line_items[0].cbu.route_number if order.line_items[0] %></td>
+    <td><%=h order.line_items[0].cbu.address if order.line_items[0] %></td>
+    <td><%=h order.locker %></td>
+    <td><%=h order.problem %></td>
+    <td><%=h order.description %></td>
+    <td><%=h order.date %></td>
+    <td><%= link_to 'archive', order, :confirm => 'Are you sure?', :method => :delete unless order.work_complete%></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to 'Map these CBUs' , :controller => 'orders/map' %><br />

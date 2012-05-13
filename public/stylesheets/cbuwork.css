@@ -1,0 +1,140 @@
+/* Navigation Bar */
+
+#navbar ul {
+    padding: 0;
+    margin: 0;
+    background-color: #999;
+    color: White;
+    float: left;
+    width: 100%;
+    list-style: none;
+    font-weight: bold;
+    font-size: 13px;
+    border-bottom: 2px solid #333;
+}
+#navbar ul li { 
+    display: inline;
+    color: White;
+    float: left;
+    border-right: 1px solid #333;
+    font-family: arial, helvetica, sans-serif;
+}
+#navbar ul li a {
+    padding: 0.2em 0.7em;
+    background-color: #999; 
+    color: White;
+    text-decoration: none;
+    float:left;
+}
+#navbar ul li a:hover {
+    background-color: #333;
+    color: #fff;
+}
+/* Style for the cart in the sidebar (from page 121)*/
+#cart {
+	font-size: smaller;
+	color:     white;
+	}
+#cart table {
+	border-top:    1px dotted #595;
+	border-bottom: 1px dotted #595;
+	margin-bottom: 10px;
+	}
+
+/* Styles for the cart in the main page (from page 114)*/
+#cart-title {
+	font: 120% bold;
+	}
+
+#cbustore .entry form, #cbustore .entry form div {
+	display: inline;
+	}
+	
+#notice {
+	border: 2px solid red;
+	padding: 1em;
+	margin-bottom: 2em;
+	background-color: #f0f0f0;
+	font: bold smaller sans-serif;
+	}
+/* Styles for main page (from page 92)*/
+#banner {
+	background: #9c9;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 2px solid;
+	font: small-caps 40px/40px "times New Roman", serif;
+	color: #282;
+	text-align: center;
+	}
+#banner img {
+		float: left;
+	}
+#columns {
+		background: #141;
+	}
+#main {
+		margin-left: 13em;
+		padding-top: 4em;
+		padding-left: 2em;
+		background: white;
+	}
+#side {
+		float: left;
+		padding-top: 1em;
+		padding-left: 1em;
+		padding-bottom: 1em;
+		width: 10em;
+		background: #141;
+	}
+#side a {
+	float: left
+		color: #bfb;
+		font-size: small;
+		
+		background: #141;
+	}
+	
+	
+	/* Styles for order form */
+
+.request-form fieldset {
+  background: #efe;
+}
+
+.request-form legend {
+  color: #dfd;
+  background: #141;
+  font-family: sans-serif;
+  padding: 0.2em 1em;
+}
+
+.request-form label {
+  width: 5em;
+  float: left;
+  text-align: right;
+  padding-top: 0.2em;
+  margin-right: 0.1em;
+  display: block;
+}
+
+.request-form select, .request-form textarea, .request-form input {
+  margin-left: 0.5em;
+}
+
+.request-form .submit {
+  margin-left: 4em;
+}
+
+.request-form div {
+  margin: 0.5em 0;
+}
+/* END:form */
+
+.background0 {
+	background-color: coral;
+}
+
+.background1 {
+	background-color: white;
+}

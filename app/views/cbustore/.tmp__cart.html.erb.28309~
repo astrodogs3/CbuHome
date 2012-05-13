@@ -1,0 +1,13 @@
+<div class="cart-title">Your CBU Work Request</div>
+<table>
+	<%= render(:partial => "cart", :collection => cart.cbus) %>
+	
+	<tr>
+		<th>route number</th>
+		<th>address</th>
+	</tr>
+
+	
+</table>
+
+<%= button_to 'Empty Request List', :action => 'empty_cart' %>

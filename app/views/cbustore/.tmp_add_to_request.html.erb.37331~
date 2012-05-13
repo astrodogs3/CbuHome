@@ -1,0 +1,17 @@
+<div class="cart-title">Your Request</div>
+<table>
+<!--	<tr>
+		<th>route number</th>
+		<th>address</th>
+	</tr>!-->
+<% for cbu in @cart.cbus %>
+	<tr>
+		<td><%=h cbu.route_number%></td>
+		<td><%=h cbu.address%></td>
+	</tr>
+	<%end%>	
+</table>
+
+<%= button_to 'Empty Request List', :action => 'empty_cart' %>
+
+

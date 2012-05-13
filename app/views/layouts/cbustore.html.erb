@@ -1,0 +1,63 @@
+
+<html>
+    <head>
+        <title>CBU Parcel Locker Repairs</title>
+        <%= stylesheet_link_tag "cbuwork", :media => "all" %>
+    </head>
+    <body id="cbustore">
+        <div id="banner">
+            <%= image_tag("cluster_box_unit.png") %>
+            <%= @page_title || "CBU Parcel Locker Repair Request" %>
+
+            <span style="text-align:right">
+            <% form_tag "/cbus/find" do %>
+                <%= text_field_tag :search_string %>
+                <%= submit_tag "search" %>
+                <%end %>
+            </span>
+
+
+<div id='navbar'>
+<ul>
+<li><%= link_to 'Home', {:controller => 'pages', :action => 'home'} %></li>
+<li><%= link_to 'Resources', {:controller => 'pages', :action => 'resources'} %></li>
+<li><%= link_to 'About Us', {:controller => 'pages', :action => 'about'} %></li>
+<li><%= link_to 'Contact Us', {:controller => 'pages', :action => 'contact'} %></li>
+</ul>
+
+</div>
+
+<!--        <div id="columns">!-->
+    <div id="side">
+    	<% if @cart %>
+		<% hidden_div_if(@cart.items.empty?, :id => "cart") do %>
+		<%= render(:partial => "cart", :object => @cart) %><br/>
+<!--		<%= render(:partial => "user_orderlist", :locals =>{:orders=>Order.find(:all)}) %>    !-->
+		<%end%>
+	<%end%>
+<% if session[:user_id] %>
+   <br />
+
+   <%= link_to 'Orders' ,   :controller => 'orders' %><br />
+   <%= link_to 'Request Repairs' , :controller => 'cbustore' %><br />
+
+   <%= link_to 'CBU Inventory' , :controller => 'cbus' %><br />
+   <%= link_to 'Map CBUs' , :controller => 'cbus/map' %><br />
+   <%= link_to 'Archived Orders' ,   :controller => 'orders',:archive=>"true"%><br />
+   <br />
+   
+   <%= link_to 'Users' ,    :controller => 'users' %><br />
+   <br />
+   <%= link_to 'Logout' ,   :controller => 'admin' , :action => 'logout' %>
+<%end%>
+</div>
+<div id="main">
+	<% if flash[:notice] -%>
+	   <div id="notice"><%= flash[:notice] %></div>
+	<% end -%>
+<%= yield :layout %>
+  </div>
+</div>
+</body>
+</html>
+

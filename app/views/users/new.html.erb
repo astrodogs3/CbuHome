@@ -1,0 +1,57 @@
+<div class="depot-form">
+
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+
+  <fieldset>
+  <legend>Enter User Details</legend>
+
+  <div>
+    <%= f.label :name %>:
+    <%= f.text_field :name, :size => 40 %>
+  </div>
+  
+  <div>
+    <%= f.label :title %>:
+    <%= f.text_field :position, :size => 40%>
+  </div>
+  
+  <div>
+    <%= f.label :phone %>:
+    <%= f.text_field :phone, :size => 15%>
+   </div>
+   
+  <div>
+    <%= f.label :office %>:
+    <%= f.text_field :office, :size => 40%>
+  </div>
+  
+  <div>
+    <%= f.label :zip %>:
+    <%= f.text_field :zip, :size => 10%>
+  </div>
+  
+  <div>
+    <%= f.label :access_type %>:
+    <%= f.text_field :access_type, :size => 20%>
+  </div>
+  
+  <div>
+    <%= f.label :password, 'Password' %>:
+    <%= f.password_field :password, :size => 40 %>
+  </div>  
+
+  <div>
+    <%= f.label :password_confirmation, 'Confirm' %>:
+    <%= f.password_field :salt, :size => 40 %>  <!--Book has this as 'password_confirmation' on page 161 !-->
+  </div>
+
+  <div>
+    <%= f.submit "Add User", :class => "submit" %>
+  </div> 
+
+  </fieldset>
+<% end %>
+
+</div>
+

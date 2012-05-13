@@ -1,0 +1,9 @@
+<div class="cart-title"> CBU address for Work Request</div>
+<table>
+			<%= render(:partial => "cart_item", :collection => cart.items) %>  
+
+
+
+</table>
+<%= button_to 'Change this Address', :action => 'empty_cart' %>
+<%= button_to "Add Problem Details" , :action => 'checkout' %>
