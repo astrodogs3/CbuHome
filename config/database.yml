@@ -2,7 +2,7 @@
 #   gem install sqlite3
 development:
   adapter: sqlite3
-  database: db/cbuwork_development.sqlite3
+  database: db/cbuwork_development.sqlite
   pool: 5
   timeout: 5000
 

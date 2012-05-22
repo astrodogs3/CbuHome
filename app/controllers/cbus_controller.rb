@@ -4,7 +4,7 @@ class CbusController < ApplicationController
   def index
   #  @cbus = Cbu.all
   @cbus = Cbu.find(:all, :order => :route_number)
-   #  @cbus = Cbu.paginate :page => params[:page], :order => 'route_number', :per_page => 20
+  @cbus = Cbu.paginate :page => params[:page], :order => 'route_number', :per_page => 20
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @cbus }
