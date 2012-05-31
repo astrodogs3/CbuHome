@@ -7,7 +7,18 @@ gem 'rails', '3.0.5'
 
 gem 'will_paginate', '>=3.0.pre'
 
-gem 'sqlite3'
+
+# gem 'sqlite3' - (this is changed to use sqlite3 for development and postgresql for production)
+    
+    group :development, :test do
+        gem 'sqlite3'
+    end
+# Heroku :
+    group :production do
+        gem 'thin'
+        gem 'pg'
+    end
+
 gem 'geokit'
 # Use unicorn as the web server
 # gem 'unicorn'
