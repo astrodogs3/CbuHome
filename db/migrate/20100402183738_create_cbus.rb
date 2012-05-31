@@ -2,28 +2,25 @@ class CreateCbus < ActiveRecord::Migration
   def self.up
     create_table :cbus do |t|
        t.integer :id
-       t.varchar :address
-       t.varchar :city
-       t.varchar :state
+       t.string :address
+       t.string :city
+       t.string :state
        t.integer :zip
-       t.varchar :route_number
-       t.varchar :info
-       t.varchar :mode
-       t.varchar :cbu_type
-       t.varchar :postal_purchase
-       t.varchar :prvt_purchase
-       t.varchar :nbu_type
-       t.varchar :nbu_number
-       t.varchar :parcel_locker
+       t.string :route_number
+       t.string :info
+       t.string :mode
+       t.string :cbu_type
+       t.string :postal_purchase
+       t.string :prvt_purchase
+       t.string :nbu_type
+       t.string :nbu_number
+       t.string :parcel_locker
        t.integer :res_deliveries
        t.integer :bus_deliveries
-       t.varchar :mth_installed
-       t.varchar :yr_installed
+       t.string :mth_installed
+       t.string :yr_installed
        t.float :lat
-       t.float :lng
-       
-       
-       
+       t.float :lng       
        
       t.timestamps
     end
