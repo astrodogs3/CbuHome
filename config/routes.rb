@@ -1,4 +1,9 @@
-CbuHome::Application.routes.draw do |map|
+CbuHome::Application.routes.draw do 
+get "cbustore/index"
+resources :cbus
+
+  root :to => 'cbustore#index', :as => 'cbustore'
+  
   
   map.resources :users
 
