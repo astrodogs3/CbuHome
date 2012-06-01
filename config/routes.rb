@@ -1,7 +1,7 @@
-CbuHome::Application.routes.draw do  #|map|
-get "cbustore/index" #add to try out
-resources :cbus #add to try out
-root :to => 'cbustore#index', :as => 'cbustore' #add to try out 
+CbuHome::Application.routes.draw do |map|
+#get "cbustore/index" #add to try out
+#resources :cbus #add to try out
+#root :to => 'cbustore#index', :as => 'cbustore' #add to try out 
   
   map.resources :users
 
