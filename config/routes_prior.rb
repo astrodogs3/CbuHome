@@ -1,40 +1,37 @@
-#CbuRequest::Application.routes.draw do |map|
-CbuHome::Application.routes. draw do 
-  
-match 'admin/login' => 'admin#login'
-match 'pages/home' => 'pages#home'
-match 'pages/resources' => 'pages#resources'
-match 'pages/about' => 'pages#about'
-match 'pages/contact' => 'pages#contact'
-match 'admin/index' => 'admin#index'
+#<<<<<<< HEAD
+CbuHome::Application.routes.draw do |map|
+#get "cbustore/index" #add to try out
+#resources :cbus #add to try out
+#root :to => 'cbustore#index', :as => 'cbustore' #add to try out 
+#=======
+#CbuHome::Application.routes.draw do #|map|
+#get "cbustore/index"  #add to try out
+#resources :cbus  #add to try out
 
-match 'orders/index' => 'orders#index'
-match 'cbustore' => 'cbustore#index'
-match 'cbus/map' => 'cbus#map'
+#  root :to => 'cbustore#index', :as => 'cbustore'  #add to try out
+  
+#>>>>>>> c06b73b7d6a90f485cd2669e27ccb68178a227cd
+  
+  map.resources :users
 
+  map.resources :line_items
+
+  map.connect 'cbus/map',:controller=>'cbus', :action=>'map'
+
+  map.connect 'offices/map',:controller=>'offices', :action=>'map'
+
+  map.connect 'orders/map',:controller=>'orders', :action=>'map'
   
-  #map.resources :users
-resources :users
-  #map.resources :line_items
-resources :line_items
-  #map.connect 'cbus/map',:controller=>'cbus', :action=>'map'
-match 'cbus/map' => 'cbus#map'
-  #map.connect 'offices/map',:controller=>'offices', :action=>'map'
-match 'offices/map' => 'offices#map'
-  #map.connect 'orders/map',:controller=>'orders', :action=>'map'
-match 'orders/map' => 'orders#map' 
-  #map.resources :orders
-resources :orders
-  #map.resources :offices
-resources :offices
-  #map.resources :cbus
-resources :cbus
-  #map.resources :migrations 
-resources :migrations 
-#map.connect ':controller/:action/:id'
- # map.connect ':controller/:action/:id.:format' 
- 
+  map.resources :orders
+
+  map.resources :offices
+
+  map.resources :cbus
+
+  map.resources :migrations 
   
+map.connect ':controller/:action/:id'
+  map.connect ':controller/:action/:id.:format'  
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -85,11 +82,11 @@ resources :migrations
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  # root :to => "welcome#index"
 
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
+  # match ':controller(/:action(/:id(.:format)))'
 end
