@@ -4,7 +4,7 @@ class CbustoreController < ApplicationController
     #this next line is added from page 121 for the ajax code
     @cart = find_cart
   end
-  
+
 # the following is from page 102 and page 113
   def add_to_request
     cbu = Cbu.find(params[:id])
@@ -19,20 +19,20 @@ class CbustoreController < ApplicationController
 #    redirect_to :action => 'index'
     redirect_to_index("Invalid CBU address")
   end
-  
+
 # the following is from page 112 and page 113
   def empty_cart
-    session[:cart] = nil 
+    session[:cart] = nil
 #    flash[:notice] = "Your Request List is currently empty"
 #    redirect_to :action => 'index'
     redirect_to_index("Your Request List is currently empty")
   end
-  
-# the following is from page 145  
+
+# the following is from page 145
 def save_order
     @cart = find_cart
-    @order = Order.new(params[:order]) 
-    @order.add_line_items_from_cart(@cart) 
+    @order = Order.new(params[:order])
+    @order.add_line_items_from_cart(@cart)
     if @order.save
       session[:cart] = nil
       redirect_to_index("Request submitted - add more or finish")
@@ -40,13 +40,13 @@ def save_order
       render :action => 'checkout'
     end
   end
-  
-  
+
+
   # Headfirst page 174
   def find
      @order = Order.find_all_by_route_number(params[:search_string])
   end
-  
+
 
  def checkout
   @cart = find_cart
@@ -55,7 +55,7 @@ def save_order
   else
     @order = Order.new
   end
-end 
+end
 
 
 
@@ -65,7 +65,7 @@ protected
 def authorize
 end
 
-  
+
 #the following is from page 101
 private
 
@@ -73,9 +73,9 @@ def redirect_to_index(msg = nil)
   flash[:notice] = msg if msg
   redirect_to :action => 'index'
 end
-# the following is from page 101 
+# the following is from page 101
   def find_cart
-   session[:cart] ||= Cart.new    #later on page 172 the book makes this 
+   session[:cart] ||= Cart.new    #later on page 172 the book makes this
                                   #@cart = (session[:cart] ||= Cart.new)
                                   # additionally adds to the cbustore_controller.rb
                                   # before_filter :find_cart, :except => :empty_cart

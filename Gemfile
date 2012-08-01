@@ -9,16 +9,21 @@ gem 'will_paginate', '>=3.0.pre'
 
 
 # gem 'sqlite3' - (this is changed to use sqlite3 for development and postgresql for production)
-    
+
     group :development, :test do
         gem 'sqlite3'
     end
-# Heroku :
-    group :production do
-        gem 'thin'
-        gem 'pg'
-    end
 
+# Heroku :    
+    group :production do
+        gem 'pg'
+        gem 'thin'
+    end
+gem 'heroku'
+    
+#gem 'pg'
+#gem 'ruby-debug19', :require => 'ruby-debug'
+gem 'dynamic_form'
 gem 'geokit'
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -40,6 +45,6 @@ gem 'geokit'
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
-# group :development, :test do
+#group :development, :test do
 #   gem 'webrat'
 # end

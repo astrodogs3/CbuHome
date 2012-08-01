@@ -30,8 +30,8 @@
 <!--        <div id="columns">!-->
     <div id="side">
     	<% if @cart %>
-		<% hidden_div_if(@cart.items.empty?, :id => "cart") do %>
-		<%= render(:partial => "cart", :object => @cart) %><br/>
+		    <% hidden_div_if(@cart.items.empty?, :id => "cart") do %>
+		    <%= render(:partial => "cart", :object => @cart) %><br/>
 <!--		<%= render(:partial => "user_orderlist", :locals =>{:orders=>Order.find(:all)}) %>    !-->
 		<%end%>
 	<%end%>
@@ -39,16 +39,19 @@
    <br />
 
    <%= link_to 'Orders' ,   :controller => 'orders' %><br />
-   <%= link_to 'Request Repairs' , :controller => 'cbustore' %><br />
+   <%= link_to 'Request Repairs' , cbustore_path %><br />
 
    <%= link_to 'CBU Inventory' , :controller => 'cbus' %><br />
-   <%= link_to 'Map CBUs' , :controller => 'cbus/map' %><br />
-   <%= link_to 'Archived Orders' ,   :controller => 'orders',:archive=>"true"%><br />
+   <%#= link_to 'Map CBUs' , :controller => 'cbus/map' %><br />
+   <%= link_to 'Map CBUs', cbus_map_path %><br />
+   <%#= link_to 'Archived Orders' ,   :controller => 'orders',:archive=>"true"%><br />
+   <%= link_to 'Archived Orders' , orders_path(:archive => true)%><br />
+   <%#= link_to 'Archived Orders' ,   :controller => 'orders',:archive=>"true"%><br />
    <br />
-   
+
    <%= link_to 'Users' ,    :controller => 'users' %><br />
    <br />
-   <%= link_to 'Logout' ,   :controller => 'admin' , :action => 'logout' %>
+   <%= link_to 'Logout', admin_logout_path %>
 <%end%>
 </div>
 <div id="main">

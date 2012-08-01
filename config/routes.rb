@@ -1,7 +1,8 @@
 #CbuRequest::Application.routes.draw do |map|
-CbuHome::Application.routes. draw do 
-  
-match 'admin/login' => 'admin#login'
+CbuHome::Application.routes.draw do
+  root :to => "admin#login"
+
+match 'admin/logout' => 'admin#logout'
 match 'pages/home' => 'pages#home'
 match 'pages/resources' => 'pages#resources'
 match 'pages/about' => 'pages#about'
@@ -10,9 +11,12 @@ match 'admin/index' => 'admin#index'
 
 match 'orders/index' => 'orders#index'
 match 'cbustore' => 'cbustore#index'
+match 'cbustore/add_to_request' => 'cbustore#add_to_request'
+match 'cbustore/empty_cart' => 'cbustore#empty_cart'
+match 'cbustore/checkout' => 'cbustore#checkout'
+match 'cbustore/save_order' => 'cbustore#save_order'
 match 'cbus/map' => 'cbus#map'
 
-  
   #map.resources :users
 resources :users
   #map.resources :line_items
@@ -22,20 +26,20 @@ match 'cbus/map' => 'cbus#map'
   #map.connect 'offices/map',:controller=>'offices', :action=>'map'
 match 'offices/map' => 'offices#map'
   #map.connect 'orders/map',:controller=>'orders', :action=>'map'
-match 'orders/map' => 'orders#map' 
+match 'orders/map' => 'orders#map'
   #map.resources :orders
 resources :orders
   #map.resources :offices
 resources :offices
   #map.resources :cbus
 resources :cbus
-  #map.resources :migrations 
-resources :migrations 
+  #map.resources :migrations
+resources :migrations
 #map.connect ':controller/:action/:id'
- # map.connect ':controller/:action/:id.:format' 
- 
-  
-  
+ # map.connect ':controller/:action/:id.:format'
+
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

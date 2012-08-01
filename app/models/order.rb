@@ -2,12 +2,13 @@ class Order < ActiveRecord::Base
   has_many :line_items
   has_many :cbus, :through=>:line_items
   self.include_root_in_json = false
-  
+
+  validates :locker, :presence => true
 #this code puts the cbu address in correct format for the google maps app
   def full_address
     "#{address}, #{city}, #{state}, #{zip}"
   end
-  
+
   PROBLEM_TYPES = [
   #  Displayed                 stored in db
     ["Key Broken in Lock",     "key broken in lock"],
@@ -17,7 +18,7 @@ class Order < ActiveRecord::Base
     ["Graffitti",              "graffitti"],
     ["Other-Describe",         "other-describe"]
   ]
-  
+
   LOCKER_NUM = [
   #  Displayed                 stored in db
     ["1 TOP",                  "1 TOP"],
@@ -35,14 +36,14 @@ class Order < ActiveRecord::Base
 #      line_items << li
 #   end
 #end
-  
+
 def add_line_items_from_cart(cart)
     cart.items.each do |item|
       li = LineItem.from_cart_item(item)# "from_cart_item(item)" is a method? to get the item from cart, store in li #
       line_items << li                  # appends the li stuff to line_items?
-   end   
-   
-   
+   end
+
+
   end
 
 

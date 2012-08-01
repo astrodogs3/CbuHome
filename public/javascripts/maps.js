@@ -18,7 +18,10 @@ function init(){
 	map.addControl(new GSmallMapControl());
 	map.addControl(new GMapTypeControl());
 	map.setCenter(new GLatLng(centerLatitude, centerLongitude), startZoom);
-	
+
+ <!-- var cbus = #(@cbus}; //-->
+ <!-- console.log(cbus.length);  //-->
+   
 	for (i = 0; i < cbus.length; i++) {
 		addMarker(cbus[i].lat, cbus[i].lng, cbus[i].address );
 	}

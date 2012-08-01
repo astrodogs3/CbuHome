@@ -8,11 +8,12 @@
 			<th>Address</th>
 		</tr>
 
-	<% for cbu in @cbus %>	
+	<% for cbu in @cbus %>
 		<tr>
 			<td><%=h cbu.route_number%></td>
 			<td><%=h cbu.address%></td>
-			<td><%= button_to 'Add to Request', :action => 'add_to_request', :id => cbu %></td>
+			<td><%= button_to 'Add to Request', cbustore_add_to_request_path(:id => cbu)%>
+      </td>
 		</tr>
 	<% end %>
 </table>

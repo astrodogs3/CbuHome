@@ -1,6 +1,6 @@
-<div class="request-form">  
-  <%= error_messages_for 'order' %>  
-  <% form_for :order, :url => { :action => :save_order } do |form| %>
+<div class="request-form">
+  <%= error_messages_for 'order' %>
+  <%= form_for @order do |form| %>
 	<fieldset>
       <legend>Please Enter Your Details</legend>
 <div>
@@ -10,7 +10,7 @@
 <div>
 <%= form.label :problem, "Problem:" %>
 <%= form.select :problem,Order::PROBLEM_TYPES,:prompt => "Select a problem" %>
-</div><br/>    
+</div><br/>
 <div>
 <%= form.label :description, "Description:" %>
 <%= form.text_area :description, :rows => 5, :cols => 40 %>
