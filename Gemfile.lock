@@ -78,8 +78,16 @@ GEM
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rubyzip (0.9.8)
+    sequel (3.20.0)
+    sinatra (1.0)
+      rack (>= 1.0)
     sqlite3 (1.3.6)
     sqlite3 (1.3.6-x86-mingw32)
+    taps (0.3.24)
+      rack (>= 1.0.1)
+      rest-client (>= 1.4.0, < 1.7.0)
+      sequel (~> 3.20.0)
+      sinatra (~> 1.0.0)
     thin (1.2.11-x86-mingw32)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -102,5 +110,6 @@ DEPENDENCIES
   pg
   rails (= 3.0.5)
   sqlite3
+  taps
   thin
   will_paginate (>= 3.0.pre)
