@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.5'
+gem 'heroku'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -19,7 +20,6 @@ gem 'will_paginate', '>=3.0.pre'
         gem 'pg'
         gem 'thin'
     end
-gem 'heroku'
     
 #gem 'pg'
 #gem 'ruby-debug19', :require => 'ruby-debug'
