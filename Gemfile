@@ -1,5 +1,7 @@
 source 'http://rubygems.org'
 
+
+
 gem 'rails', '3.0.5'
 gem 'heroku'
 gem 'taps'
@@ -22,7 +24,7 @@ gem 'will_paginate', '>=3.0.pre'
     end
     
 #gem 'pg'
-#gem 'ruby-debug19', :require => 'ruby-debug'
+
 gem 'dynamic_form'
 gem 'geokit'
 # Use unicorn as the web server
