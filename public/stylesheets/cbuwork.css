@@ -88,9 +88,9 @@
 		background: #141;
 	}
 #side a {
-	float: left
+	float: left;
 		color: #bfb;
-		font-size: small;
+		font-size: medium;
 		
 		background: #141;
 	}
@@ -132,7 +132,7 @@
 /* END:form */
 
 .background0 {
-	background-color: coral;
+	background-color: yellow;
 }
 
 .background1 {
